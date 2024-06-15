@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Custom Title</title>
+        <style>
+            body
+            {
+                background-color: #121212;
+                color: #ffffff;                
+                transition: background-color 0.5s, color 0.5s;
+            }
+            a
+            {
+                color: #bb86fc;
+                transition: color 0.5s;
+            }
+            img
+            {
+                filter: invert(100%);
+                transition: color 0.5s;
+            }
+            .lightmode
+            {
+                background-color: #ffffff;
+                color: #121212;
+                transition: background-color 0.5s, color 0.5s;
+            }
+            .lightmode a
+            {
+                color: blue;
+                transition: color 0.5s;
+            }
+            .lightmode img
+            {
+                filter: invert(0%);
+                transition: filter 0.5s;
+            }
+            button
+            {
+                background-color: #444;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+            }
+            .lightmode button
+            {
+                background-color: #fff;
+                color: #444;
+                border: none;
+                cursor: pointer;
+            }
+            #toggle-button {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 10px;
+                background-color: #444;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="toggle-button">Toggle Dark Mode</button>
+        <h1>Title of Webpage</h1>
+        <p>A paragraph of text. A paragraph of text.A paragraph of text.A paragraph of text.A paragraph of text.A paragraph of text.A paragraph of text.A paragraph of text.A paragraph of text.A paragraph of text.A paragraph of text.A paragraph of text.A paragraph of text.A paragraph of text.A paragraph of text.A paragraph of text.</p>
+        <input type="text" id="ul-input" placeholder="New item">
+        <button id ="ul-input-btn" style="height: 22px;">Add</button>
+        <ul id="testul">
+            <li>
+                hello world
+            </li>
+            <li>
+                testing
+            </li>            
+        </ul>
+        <a href="https://www.google.com">Want to Go to Google?</a>
+        <p></p>        
+        <div>
+            <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        </div>
+
+        <script>
+            const toggleButton = document.getElementById('toggle-button');
+            toggleButton.addEventListener('click', () => {
+                document.body.classList.toggle('lightmode')
+            });
+            const ulInput = document.getElementById('ul-input');
+            const ulInputBtn = document.getElementById('ul-input-btn');
+            const ul = document.getElementById('testul');            
+
+            ulInputBtn.addEventListener('click', () =>
+            {
+                const newItem = document.createElement('li');
+                newItem.textContent = ulInput.value;
+                ul.appendChild(newItem);
+                ulInput.value = "";
+            });
+        </script>
+    </body>
+</html>
